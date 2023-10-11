@@ -104,7 +104,9 @@ namespace OskiTest.Controllers
                 Id = user.Id,
                 Name = user.UserName,
                 Email = user.Email,
-                IsAdmin = userRepository.isAdmin(user.Id)
+                IsAdmin = userRepository.isAdmin(user.Id),
+                TestId = user.Tests.Select(t => t.Id).ToList()
+              
                 
             };
 
