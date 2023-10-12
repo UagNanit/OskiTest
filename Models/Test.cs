@@ -8,11 +8,10 @@ namespace OskiTest.Models
         public string? TestName { get; set; }
         public string? Description { get; set; }
         public virtual List<Question> Questions { get; set; }
-        public virtual List<User> Users { get; set; }
         public Test()
         {
             Questions = new List<Question>();
-            Users = new List<User>();
+           
         }
        
         

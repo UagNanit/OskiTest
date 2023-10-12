@@ -12,11 +12,12 @@ namespace OskiTest.Data
     public class DBContext : DbContext
     {
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { set; get; }
-        public DbSet<Anser> Ansers { set; get; }
-        public DbSet<Question> Questions { set; get; }
-        public DbSet<Test> Tests { set; get; }
+        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<Role> Roles { set; get; } = null!;
+        public DbSet<Anser> Ansers { set; get; } = null!;
+        public DbSet<Question> Questions { set; get; } = null!;
+        public DbSet<Test> Tests { set; get; } = null!;
+        public DbSet<UserTests> UserTests { set; get; } = null!;
 
 
         public DBContext(DbContextOptions<DBContext> options)
@@ -43,12 +44,12 @@ namespace OskiTest.Data
             User simpleUser1 = new User { Id = Guid.NewGuid().ToString(), UserName = "user1", Email = userEmail1, Password = userPassword1, RoleId = userRole.Id };
             User simpleUser2 = new User { Id = Guid.NewGuid().ToString(), UserName = "user2", Email = userEmail2, Password = userPassword2, RoleId = userRole.Id };
 
-            Test test1 = new Test { Id = Guid.NewGuid().ToString(), Users = { simpleUser1, simpleUser2 }, TestName = "HTML test", Description = "HTML - язык разметки сайтов, без него страницы в интернете имели бы совершенно другой вид, если вообще могли бы существовать. Веб-разрабочик должен знать его на отлично. Чаще всего HTML используется в связке с CSS и JavaScript, но этот тест проверит знания именно языка разметки." };
-            Test test2 = new Test { Id = Guid.NewGuid().ToString(), Users = { simpleUser1 }, TestName = "PHP test", Description = "PHP — один из популярнейших скриптовых языков, используемый для web-программирования сотнями тысяч разработчиков. Тест включает в себя вопросы по базовым разделам программирования на PHP и подойдет как для тренировки профессиональным разработчикам, так и тем, кто еще только начинает изучение этого языка." };
-            Test test3 = new Test { Id = Guid.NewGuid().ToString(), Users = { simpleUser1 }, TestName = "Web forms test", Description = "Форма - довольно частоиспользуемый элемент при web-разработке. Через нее можно регистироваться, заполнять анкеты, оставлять обратную связь, проходить тесты и многое другое." };
-            Test test4 = new Test { Id = Guid.NewGuid().ToString(), Users = { simpleUser1 }, TestName = "CSS test", Description = "CSS - язык описания внешнего вида веб-документа. С помощью CSS оформлены большинство страницв интернете. Тест охватывает важные разделы CSS, без знания которых разработчику будет сложно профессионально работать в сфере." };
-            Test test5 = new Test { Id = Guid.NewGuid().ToString(), Users = { simpleUser2 }, TestName = "Java test", Description = "Java - объектно-ориентированный язык программирования, который часто используется для серверных приложений в крупных корпорациях, а также для web-приложений, встравиваемых систем и множества других сфер. В тесте представлены вопросы по темам, которые должен знать Junior Java-разработчик, но тест будет полезен не только новичкам, но и профессионалам для повторения." };
-            Test test6 = new Test { Id = Guid.NewGuid().ToString(), Users = { simpleUser2 }, TestName = "C++ test", Description = "C++ - популярный язык программирования, который применяется крупнейшими IT-корпорациями в различных областях. Тест включает в себя вопросы по основам программирования на C++ и будет полезен как начинающим для проверки своих знаний, так и профессионалам для повторения базовых тем." };
+            Test test1 = new Test { Id = Guid.NewGuid().ToString(), TestName = "HTML test", Description = "HTML - язык разметки сайтов, без него страницы в интернете имели бы совершенно другой вид, если вообще могли бы существовать. Веб-разрабочик должен знать его на отлично. Чаще всего HTML используется в связке с CSS и JavaScript, но этот тест проверит знания именно языка разметки." };
+            Test test2 = new Test { Id = Guid.NewGuid().ToString(), TestName = "PHP test", Description = "PHP — один из популярнейших скриптовых языков, используемый для web-программирования сотнями тысяч разработчиков. Тест включает в себя вопросы по базовым разделам программирования на PHP и подойдет как для тренировки профессиональным разработчикам, так и тем, кто еще только начинает изучение этого языка." };
+            Test test3 = new Test { Id = Guid.NewGuid().ToString(), TestName = "Web forms test", Description = "Форма - довольно частоиспользуемый элемент при web-разработке. Через нее можно регистироваться, заполнять анкеты, оставлять обратную связь, проходить тесты и многое другое." };
+            Test test4 = new Test { Id = Guid.NewGuid().ToString(), TestName = "CSS test", Description = "CSS - язык описания внешнего вида веб-документа. С помощью CSS оформлены большинство страницв интернете. Тест охватывает важные разделы CSS, без знания которых разработчику будет сложно профессионально работать в сфере." };
+            Test test5 = new Test { Id = Guid.NewGuid().ToString(), TestName = "Java test", Description = "Java - объектно-ориентированный язык программирования, который часто используется для серверных приложений в крупных корпорациях, а также для web-приложений, встравиваемых систем и множества других сфер. В тесте представлены вопросы по темам, которые должен знать Junior Java-разработчик, но тест будет полезен не только новичкам, но и профессионалам для повторения." };
+            Test test6 = new Test { Id = Guid.NewGuid().ToString(), TestName = "C++ test", Description = "C++ - популярный язык программирования, который применяется крупнейшими IT-корпорациями в различных областях. Тест включает в себя вопросы по основам программирования на C++ и будет полезен как начинающим для проверки своих знаний, так и профессионалам для повторения базовых тем." };
 
             Question question1_1 = new Question { Id = Guid.NewGuid().ToString(), TestId = test1.Id, TextQuestion = "Как правильно оставлять комментарии в HTML-коде?" };
             Question question1_2 = new Question { Id = Guid.NewGuid().ToString(), TestId = test1.Id, TextQuestion = "Документ по ссылке должен открываться в новом окне браузера. Как этого добиться?" };
@@ -122,7 +123,10 @@ namespace OskiTest.Data
                 question4_1, question4_2, question4_3, question4_4, question4_5, question4_6, question4_7, question4_8,
                 question5_1, question5_2, question5_3, question5_4, question5_5, question5_6, question5_7, question5_8,
                 question6_1, question6_2, question6_3, question6_4, question6_5, question6_6, question6_7, question6_8});
-                                                                     
+
+            modelBuilder.Entity<Anser>();
+            modelBuilder.Entity<UserTests>();
+
 
             base.OnModelCreating(modelBuilder);
         }

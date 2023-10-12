@@ -11,10 +11,6 @@ namespace OskiTest.Models
         public string? Password { get; set; }
         public string? RoleId { get; set; }
         public virtual Role? Role { get; set; }
-        public virtual List<Test> Tests { get; set; }
-        public User()
-        {
-            Tests = new List<Test>();
-        }
+     
     }
 }
