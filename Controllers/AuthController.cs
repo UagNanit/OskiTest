@@ -5,7 +5,7 @@ using OskiTest.Data.Abstract;
 using OskiTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-
+using OskiTest.Data.Repositories;
 
 namespace OskiTest.Controllers
 {
@@ -15,10 +15,16 @@ namespace OskiTest.Controllers
     {
         IAuthService authService;
         IUserRepository userRepository;
-        public AuthController(IAuthService authService, IUserRepository userRepository)
+        ITestRepository testRepository;
+        IUserTestRepository userTestRepository;
+        public AuthController(IAuthService authService, IUserRepository userRepository, IUserTestRepository userTestRepository, ITestRepository testRepository)
         {
             this.authService = authService;
             this.userRepository = userRepository;
+            this.testRepository = testRepository;
+            this.userTestRepository = userTestRepository;
+
+
         }
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace OskiTest.Controllers
         /// <returns></returns>
         [Route("register")]
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public ActionResult<AuthData> Post([FromBody]RegisterViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -99,12 +106,14 @@ namespace OskiTest.Controllers
                 return BadRequest(new { username = "user do not exist" });
             }
 
+            var ut = userTestRepository.AllIncluding(t => t.UserId == user.Id);
             UserViewModel userViewModel = new UserViewModel
             {
                 Id = user.Id,
                 Name = user.UserName,
                 Email = user.Email,
                 IsAdmin = userRepository.isAdmin(user.Id),
+                Tests = testRepository.AllIncluding(s=>ut.Any(u=>u.TestId==s.Id)).ToList(),
             };
 
             return userViewModel;

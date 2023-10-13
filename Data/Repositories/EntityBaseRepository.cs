@@ -13,9 +13,9 @@ namespace OskiTest.Data.Repositories
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T>where T : class, IEntityBase, new()
     {
-        private DBContext _context;
+        private OskiDBContext _context;
 
-        public EntityBaseRepository(DBContext context)
+        public EntityBaseRepository(OskiDBContext context)
         {
             _context = context;
         }

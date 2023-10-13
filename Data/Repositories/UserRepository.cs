@@ -6,7 +6,7 @@ using OskiTest.Models;
 namespace OskiTest.Data.Repositories {
     public class UserRepository : EntityBaseRepository<User>, IUserRepository {
 
-        public UserRepository (DBContext context) : base (context) { }
+        public UserRepository (OskiDBContext context) : base (context) { }
 
         public bool isEmailUniq (string email) {
             var user = GetSingle(u => u.Email == email);

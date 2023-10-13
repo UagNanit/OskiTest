@@ -6,7 +6,7 @@
         public string? Name { get; set; }
         public string? Email { get; set; }
         public bool IsAdmin { get; set; }
-        public List<string> TestId { get; set; } = new List<string>();
+        public List<Test> Tests { get; set; } = new List<Test>();
 
     }
 }

@@ -18,25 +18,16 @@ builder.Services.AddCors();
 builder.Services.AddControllers();
 
 string connection = builder.Configuration.GetConnectionString("OskiTestContext");
-builder.Services.AddDbContext<DBContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<OskiDBContext>(options => options.UseSqlServer(connection));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("OskiTest", new OpenApiInfo
-    {
-        Version = "v1",
-        Title = "OskiTest API",
-        Description = "An ASP.NET Core Web API for user testing application. ",
-        TermsOfService = new Uri("https://example.com/terms"),
-        Contact = new OpenApiContact
-        {
-            Name = "Contact",
-            Url = new Uri("https://www.linkedin.com/in/oleg-kravchenko-667785203/")
-        }
-        
+     
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "OskiTest API", Version = "v1",
+        Description = "An ASP.NET Core Web API for user testing application. "
     });
 
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -62,6 +53,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITestRepository, TestRepository>();
+builder.Services.AddScoped<IUserTestRepository, UserTestRepository>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddScoped<IAnswerRepository, AnswerRepository>();
+
 builder.Services.AddSingleton<IAuthService>(new AuthService());
 
 var app = builder.Build();
@@ -73,8 +69,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "OskiTest");
-        options.RoutePrefix = string.Empty;
+       options.SwaggerEndpoint("/swagger/v1/swagger.json", "OskiTest");
     });
 }
 
