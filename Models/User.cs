@@ -12,7 +12,7 @@ namespace OskiTest.Models
         public string RoleId { get; set; }
         public virtual Role Role { get; set; } = null!;
         public virtual List<UserTest> UserTests { get; } = new();
-        //public virtual List<Test> Tests { get; } = new();
+        
 
     }
 }

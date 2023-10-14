@@ -48,12 +48,11 @@ namespace OskiTest.Services
 
 
 
-            return new AuthData{
+            return new AuthData {
                 Token = encodedJwt,
                 TokenExpirationTime = ((DateTimeOffset)expirationTime).ToUnixTimeSeconds(),
                 Id = user.Id,
-                Name = user.UserName,
-                IsAdmin = user.Role.RoleName=="admin"
+                Name = user.UserName
             };
         }
         public string HashPassword(string password)

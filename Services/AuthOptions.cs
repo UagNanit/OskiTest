@@ -5,8 +5,8 @@ namespace OskiTest.Services
 {
     public class AuthOptions
     {
-        public const string ISSUER = "http://localhost:49147"; // издатель токена
-        public const string AUDIENCE = "https://d7w55.csb.app"; // потребитель токена
+        public const string ISSUER = "http://localhost:5215"; // издатель токена
+        public const string AUDIENCE = "https://qtzkzc.csb.app/"; // потребитель токена
         const string KEY = "103g5779e7423w32"; // ключ для шифрации
         public const int LIFETIME = 15; // время жизни токена минут
         public static SymmetricSecurityKey GetSymmetricSecurityKey()

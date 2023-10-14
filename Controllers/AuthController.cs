@@ -6,6 +6,7 @@ using OskiTest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using OskiTest.Data.Repositories;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace OskiTest.Controllers
 {
@@ -92,7 +93,7 @@ namespace OskiTest.Controllers
         /// </summary>
         /// <param name="id">User ID</param>
         /// <returns></returns>
-        [Route("auth/{id}")]
+        [Route("user/{id}")]
         [HttpGet]
         [Authorize(Roles = "admin,user")]
         public ActionResult<UserViewModel> GetUserData(string id)
@@ -103,17 +104,22 @@ namespace OskiTest.Controllers
 
             if (user == null)
             {
-                return BadRequest(new { username = "user do not exist" });
+                return BadRequest(new { id = "user do not exist" });
             }
 
             var ut = userTestRepository.AllIncluding(t => t.UserId == user.Id);
+            var t = testRepository.AllIncluding(s => ut.Any(u => u.TestId == s.Id)).ToList();
+            var vtm = t.Join(ut, u => u.Id, c => c.TestId, (u, c) => new TestViewModel { 
+                Id = u.Id,
+                TestName = u.TestName, 
+                Description = u.Description, 
+                TestScore = c.TestScore }).ToList();
+
             UserViewModel userViewModel = new UserViewModel
             {
                 Id = user.Id,
                 Name = user.UserName,
-                Email = user.Email,
-                IsAdmin = userRepository.isAdmin(user.Id),
-                Tests = testRepository.AllIncluding(s=>ut.Any(u=>u.TestId==s.Id)).ToList(),
+                Tests = vtm
             };
 
             return userViewModel;

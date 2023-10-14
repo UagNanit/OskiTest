@@ -82,6 +82,7 @@ app.UseCors(options => options
           //.AllowCredentials()
           );
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

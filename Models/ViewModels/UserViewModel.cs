@@ -4,9 +4,7 @@
     {
         public string? Id { get; set; }
         public string? Name { get; set; }
-        public string? Email { get; set; }
-        public bool IsAdmin { get; set; }
-        public List<Test> Tests { get; set; } = new List<Test>();
+        public List<TestViewModel> Tests { get; set; } = new List<TestViewModel>();
 
     }
 }
