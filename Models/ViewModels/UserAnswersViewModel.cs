@@ -1,9 +1,26 @@
-﻿namespace OskiTest.Models.ViewModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace OskiTest.Models.ViewModels
 {
+    /// <summary>
+    /// User's answers to the questions of the selected test
+    /// </summary>
     public class UserAnswersViewModel
     {
-        public string UserId { get; set; }
-        public string TestId { get; set; }
+        /// <summary>
+        /// User id
+        /// </summary>
+        [Required]
+        public string? UserId { get; set; }
+        /// <summary>
+        /// Selected Test id
+        /// </summary>
+        [Required]
+        public string? TestId { get; set; }
+        /// <summary>
+        /// User answers 
+        /// </summary>
+        [Required]
         public List<AnswersViewModel> Answers { get; set; }
       
     }

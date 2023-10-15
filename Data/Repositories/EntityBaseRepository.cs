@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace OskiTest.Data.Repositories
 {
+#pragma warning disable CS1591
     public class EntityBaseRepository<T> : IEntityBaseRepository<T>where T : class, IEntityBase, new()
     {
         private OskiDBContext _context;

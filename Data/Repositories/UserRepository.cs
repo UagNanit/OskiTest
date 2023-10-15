@@ -4,6 +4,7 @@ using OskiTest.Models;
 
 
 namespace OskiTest.Data.Repositories {
+#pragma warning disable CS1591
     public class UserRepository : EntityBaseRepository<User>, IUserRepository {
 
         public UserRepository (OskiDBContext context) : base (context) { }

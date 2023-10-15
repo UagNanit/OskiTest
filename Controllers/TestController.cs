@@ -13,10 +13,12 @@ using OskiTest.Services;
 namespace OskiTest.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [ApiController]
     public class TestController: ControllerBase
     {
-       
+#pragma warning disable CS1591
+
         IUserRepository userRepository;
         ITestRepository testRepository;
         IUserTestRepository userTestRepository;
@@ -32,15 +34,20 @@ namespace OskiTest.Controllers
             this.questionRepository = questionRepository;
             this.answerRepository = answerRepository;
         }
+#pragma warning restore CS1591
 
         /// <summary>
         /// Get information about user.
         /// </summary>
         /// <param name="id">User ID</param>
         /// <returns></returns>
+        /// <response code="200">Successful execution</response>
+        /// <response code="400">Error API</response>
         [Route("user/{id}")]
         [HttpGet]
         [Authorize(Roles = "admin,user")]
+        [ProducesResponseType(typeof(UserViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<UserViewModel> GetUserData(string id)
         {
             try
@@ -55,7 +62,7 @@ namespace OskiTest.Controllers
                 }
 
                 var ut = userTestRepository.AllIncluding(t => t.UserId == user.Id);
-                var t = testRepository.AllIncluding(s => ut.Any(u => u.TestId == s.Id)).ToList();
+                var t = testRepository.AllIncluding(s => ut.Any(u => u.TestId == s.Id));
                 var vtm = t.Join(ut, u => u.Id, c => c.TestId, (u, c) => new TestViewModel
                 {
                     Id = u.Id,
@@ -83,9 +90,13 @@ namespace OskiTest.Controllers
         /// </summary>
         /// <param name="id">Test ID</param>
         /// <returns></returns>
+        /// <response code="200">Successful execution</response>
+        /// <response code="400">Error API</response>
         [Route("test/{id}")]
         [HttpGet]
         [Authorize(Roles = "admin,user")]
+        [ProducesResponseType(typeof(QuestionsViewModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<List<QuestionsViewModel>> GetTestData(string id)
         {
             try
@@ -116,9 +127,13 @@ namespace OskiTest.Controllers
         /// </summary>
         /// <param name="model">User answers to the test</param>
         /// <returns></returns>
+        /// <response code="200">Successful execution</response>
+        /// <response code="400">Error API</response>
         [Route("useranswers")]
         [HttpPost]
         [Authorize(Roles = "admin,user")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult PostUserAnswers([FromBody] UserAnswersViewModel model)
         {
             try {

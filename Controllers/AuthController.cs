@@ -10,7 +10,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace OskiTest.Controllers
 {
+#pragma warning disable CS1591
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [ApiController]
     public class AuthController: ControllerBase
     {
@@ -25,16 +27,20 @@ namespace OskiTest.Controllers
             this.testRepository = testRepository;
             this.userTestRepository = userTestRepository;
 
-
         }
+#pragma warning restore CS1591
 
         /// <summary>
         /// Login method to authenticate a user with a specified login account.
         /// </summary>
         /// <param name="model">Login information</param>
         /// <returns></returns>
+        /// <response code="200">Successful execution</response>
+        /// <response code="400">Error API</response>
         [Route("login")]
         [HttpPost]
+        [ProducesResponseType(typeof(AuthData), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<AuthData> Post([FromBody]LoginViewModel model)
         {
             try
@@ -64,9 +70,13 @@ namespace OskiTest.Controllers
         /// </summary>
         /// <param name="model">Registration information</param>
         /// <returns></returns>
+        /// <response code="200">Successful execution</response>
+        /// <response code="400">Error API</response>
         [Route("register")]
         [HttpPost]
         [Authorize(Roles = "admin")]
+        [ProducesResponseType(typeof(AuthData), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<AuthData> Post([FromBody]RegisterViewModel model)
         {
             try
