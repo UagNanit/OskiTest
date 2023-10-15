@@ -98,22 +98,27 @@ namespace OskiTest.Controllers
         }
 
         /// <summary>
-        /// The method accepts the user's answers to the test and returns the result.
+        /// Method accepts the user answers to the test and returns the result.
         /// And writes the result to the database.
         /// </summary>
         /// <param name="model">User answers to the test</param>
         /// <returns></returns>
         [Route("useranswers")]
         [HttpPost]
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin,user")]
         public ActionResult PostUserAnswers([FromBody] UserAnswersViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            int res = 0;
-
             
+            var questions = questionRepository.AllIncluding(x => x.TestId == model.TestId);
+            var res = questions.Where(q => model.Answers.Any(m => m.QuestionId == q.Id && m.AnswerId == q.CorrectAnswerId)).Count();
 
-            return Ok(new { Score = "" });
+            var userTest = userTestRepository.GetSingle(s => s.UserId == model.UserId && s.TestId == model.TestId);
+            userTest.TestScore = res;
+            userTestRepository.Update(userTest);
+            userTestRepository.Commit();
+
+            return Ok(new { Score = res });
         }
     }
 }
