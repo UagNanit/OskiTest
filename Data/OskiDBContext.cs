@@ -179,136 +179,136 @@ namespace OskiTest.Data
             Answer answer2_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question2_8.Id, TextAnswer = "С помощью переменной $POST" };
 
             //Web forms test
-            Answer answer3_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_1.Id, TextAnswer = "" };
-            Answer answer3_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_1.Id, TextAnswer = "" };
-            Answer answer3_1_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_1.Id, TextAnswer = "" };
+            Answer answer3_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_1.Id, TextAnswer = "@media print { }" };
+            Answer answer3_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_1.Id, TextAnswer = ".print { }" };
+            Answer answer3_1_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_1.Id, TextAnswer = "print { }" };
 
-            Answer answer3_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_2.Id, TextAnswer = "" };
-            Answer answer3_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_2.Id, TextAnswer = "" };
-            Answer answer3_2_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_2.Id, TextAnswer = "" };
+            Answer answer3_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_2.Id, TextAnswer = "/* Комментарий */" };
+            Answer answer3_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_2.Id, TextAnswer = "// Комментарий" };
+            Answer answer3_2_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_2.Id, TextAnswer = "*** Комментарий ***" };
 
-            Answer answer3_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_3.Id, TextAnswer = "" };
-            Answer answer3_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_3.Id, TextAnswer = "" };
-            Answer answer3_3_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_3.Id, TextAnswer = "" };
+            Answer answer3_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_3.Id, TextAnswer = "class:div" };
+            Answer answer3_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_3.Id, TextAnswer = ".class" };
+            Answer answer3_3_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_3.Id, TextAnswer = "#class" };
 
-            Answer answer3_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_4.Id, TextAnswer = "" };
-            Answer answer3_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_4.Id, TextAnswer = "" };
-            Answer answer3_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_4.Id, TextAnswer = "" };
+            Answer answer3_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_4.Id, TextAnswer = "50%" };
+            Answer answer3_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_4.Id, TextAnswer = "4" };
+            Answer answer3_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_4.Id, TextAnswer = "2 mm" };
 
-            Answer answer3_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_5.Id, TextAnswer = "" };
-            Answer answer3_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_5.Id, TextAnswer = "" };
-            Answer answer3_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_5.Id, TextAnswer = "" };
+            Answer answer3_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_5.Id, TextAnswer = "color: red;" };
+            Answer answer3_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_5.Id, TextAnswer = "font-color: #FF0000;" };
+            Answer answer3_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_5.Id, TextAnswer = "font: #FF0000;" };
 
-            Answer answer3_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_6.Id, TextAnswer = "" };
-            Answer answer3_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_6.Id, TextAnswer = "" };
-            Answer answer3_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_6.Id, TextAnswer = "" };
+            Answer answer3_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_6.Id, TextAnswer = "dotted" };
+            Answer answer3_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_6.Id, TextAnswer = "color" };
+            Answer answer3_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_6.Id, TextAnswer = "inset" };
 
-            Answer answer3_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_7.Id, TextAnswer = "" };
-            Answer answer3_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_7.Id, TextAnswer = "" };
-            Answer answer3_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_7.Id, TextAnswer = "" };
+            Answer answer3_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_7.Id, TextAnswer = "box-shadow: 0 0 5px #000;" };
+            Answer answer3_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_7.Id, TextAnswer = "box-shadow: inset 0 0 5px #000;" };
+            Answer answer3_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_7.Id, TextAnswer = "img-shadow: inset 5px #000;" };
 
-            Answer answer3_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_8.Id, TextAnswer = "" };
-            Answer answer3_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_8.Id, TextAnswer = "" };
-            Answer answer3_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_8.Id, TextAnswer = "" };
+            Answer answer3_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_8.Id, TextAnswer = "background: images/back.png; repeat-y;" };
+            Answer answer3_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_8.Id, TextAnswer = "background: url(images/back.png) repeat-x;" };
+            Answer answer3_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question3_8.Id, TextAnswer = "background: url(images/back.png) repeat-y;" };
 
             //CSS test
-            Answer answer4_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_1.Id, TextAnswer = "" };
-            Answer answer4_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_1.Id, TextAnswer = "" };
-            Answer answer4_1_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_1.Id, TextAnswer = "" };
+            Answer answer4_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_1.Id, TextAnswer = "padding: 1em" };
+            Answer answer4_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_1.Id, TextAnswer = "padding-auto: 5px" };
+            Answer answer4_1_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_1.Id, TextAnswer = "padding: auto (0px 100px)" };
 
-            Answer answer4_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_2.Id, TextAnswer = "" };
-            Answer answer4_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_2.Id, TextAnswer = "" };
-            Answer answer4_2_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_2.Id, TextAnswer = "" };
+            Answer answer4_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_2.Id, TextAnswer = "capitalize" };
+            Answer answer4_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_2.Id, TextAnswer = "to-uppercase" };
+            Answer answer4_2_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_2.Id, TextAnswer = "uppercase" };
 
-            Answer answer4_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_3.Id, TextAnswer = "" };
-            Answer answer4_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_3.Id, TextAnswer = "" };
-            Answer answer4_3_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_3.Id, TextAnswer = "" };
+            Answer answer4_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_3.Id, TextAnswer = "div { display:not: visible; }" };
+            Answer answer4_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_3.Id, TextAnswer = "div { display: none; }" };
+            Answer answer4_3_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_3.Id, TextAnswer = "div { display: hide; }" };
 
-            Answer answer4_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_4.Id, TextAnswer = "" };
-            Answer answer4_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_4.Id, TextAnswer = "" };
-            Answer answer4_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_4.Id, TextAnswer = "" };
+            Answer answer4_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_4.Id, TextAnswer = "list-styles: none" };
+            Answer answer4_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_4.Id, TextAnswer = "list-style: none" };
+            Answer answer4_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_4.Id, TextAnswer = "li-style: none" };
 
-            Answer answer4_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_5.Id, TextAnswer = "" };
-            Answer answer4_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_5.Id, TextAnswer = "" };
-            Answer answer4_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_5.Id, TextAnswer = "" };
+            Answer answer4_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_5.Id, TextAnswer = "Positions an element on top of others" };
+            Answer answer4_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_5.Id, TextAnswer = "Fixes a group of elements together" };
+            Answer answer4_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_5.Id, TextAnswer = "A fixed position element is positioned relative to the viewport, or the browser window itself" };
 
-            Answer answer4_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_6.Id, TextAnswer = "" };
-            Answer answer4_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_6.Id, TextAnswer = "" };
-            Answer answer4_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_6.Id, TextAnswer = "" };
+            Answer answer4_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_6.Id, TextAnswer = "width: block" };
+            Answer answer4_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_6.Id, TextAnswer = "width: 100%" };
+            Answer answer4_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_6.Id, TextAnswer = "margin: auto" };
 
-            Answer answer4_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_7.Id, TextAnswer = "" };
-            Answer answer4_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_7.Id, TextAnswer = "" };
-            Answer answer4_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_7.Id, TextAnswer = "" };
+            Answer answer4_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_7.Id, TextAnswer = "Aligns an element to the left, and all other elements, such as text, flow to the right" };
+            Answer answer4_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_7.Id, TextAnswer = "Aligns all elements to the left" };
+            Answer answer4_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_7.Id, TextAnswer = "Aligns a parent block to the left, and all other childs flow to the right" };
 
-            Answer answer4_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_8.Id, TextAnswer = "" };
-            Answer answer4_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_8.Id, TextAnswer = "" };
-            Answer answer4_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_8.Id, TextAnswer = "" };
+            Answer answer4_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_8.Id, TextAnswer = "background: url{img/pic.jpg}" };
+            Answer answer4_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_8.Id, TextAnswer = "background-position: 0% 0% 0%" };
+            Answer answer4_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question4_8.Id, TextAnswer = "background-repeat: repeat-x" };
 
             //Java test
-            Answer answer5_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_1.Id, TextAnswer = "" };
-            Answer answer5_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_1.Id, TextAnswer = "" };
-            Answer answer5_1_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_1.Id, TextAnswer = "" };
+            Answer answer5_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_1.Id, TextAnswer = "Остаток от деления" };
+            Answer answer5_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_1.Id, TextAnswer = "Процент от числа" };
+            Answer answer5_1_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_1.Id, TextAnswer = "В Java такого оператора нет" };
 
-            Answer answer5_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_2.Id, TextAnswer = "" };
-            Answer answer5_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_2.Id, TextAnswer = "" };
-            Answer answer5_2_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_2.Id, TextAnswer = "" };
+            Answer answer5_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_2.Id, TextAnswer = "Нисколько" };
+            Answer answer5_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_2.Id, TextAnswer = "50" };
+            Answer answer5_2_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_2.Id, TextAnswer = "25" };
 
-            Answer answer5_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_3.Id, TextAnswer = "" };
-            Answer answer5_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_3.Id, TextAnswer = "" };
-            Answer answer5_3_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_3.Id, TextAnswer = "" };
+            Answer answer5_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_3.Id, TextAnswer = "synchronized" };
+            Answer answer5_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_3.Id, TextAnswer = "strictfp" };
+            Answer answer5_3_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_3.Id, TextAnswer = "foreign" };
 
-            Answer answer5_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_4.Id, TextAnswer = "" };
-            Answer answer5_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_4.Id, TextAnswer = "" };
-            Answer answer5_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_4.Id, TextAnswer = "" };
+            Answer answer5_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_4.Id, TextAnswer = "boolean" };
+            Answer answer5_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_4.Id, TextAnswer = "string" };
+            Answer answer5_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_4.Id, TextAnswer = "float" };
 
-            Answer answer5_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_5.Id, TextAnswer = "" };
-            Answer answer5_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_5.Id, TextAnswer = "" };
-            Answer answer5_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_5.Id, TextAnswer = "" };
+            Answer answer5_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_5.Id, TextAnswer = "Наследование, полиморфизм и инкапсуляция" };
+            Answer answer5_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_5.Id, TextAnswer = "Абстракция, наследование, полиморфизм и инкапсуляция" };
+            Answer answer5_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_5.Id, TextAnswer = "Только наследование" };
 
-            Answer answer5_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_6.Id, TextAnswer = "" };
-            Answer answer5_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_6.Id, TextAnswer = "" };
-            Answer answer5_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_6.Id, TextAnswer = "" };
+            Answer answer5_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_6.Id, TextAnswer = "int i=0;" };
+            Answer answer5_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_6.Id, TextAnswer = "java.int i=0;" };
+            Answer answer5_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_6.Id, TextAnswer = "$i=0;" };
 
-            Answer answer5_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_7.Id, TextAnswer = "" };
-            Answer answer5_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_7.Id, TextAnswer = "" };
-            Answer answer5_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_7.Id, TextAnswer = "" };
+            Answer answer5_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_7.Id, TextAnswer = "goto" };
+            Answer answer5_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_7.Id, TextAnswer = "goto, const" };
+            Answer answer5_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_7.Id, TextAnswer = "Используются все" };
 
-            Answer answer5_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_8.Id, TextAnswer = "" };
-            Answer answer5_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_8.Id, TextAnswer = "" };
-            Answer answer5_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_8.Id, TextAnswer = "" };
+            Answer answer5_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_8.Id, TextAnswer = "Да" };
+            Answer answer5_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question5_8.Id, TextAnswer = "Нет" };
+
 
             //C++ test
-            Answer answer6_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_1.Id, TextAnswer = "" };
-            Answer answer6_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_1.Id, TextAnswer = "" };
-            Answer answer6_1_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_1.Id, TextAnswer = "" };
+            Answer answer6_1_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_1.Id, TextAnswer = "Нет" };
+            Answer answer6_1_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_1.Id, TextAnswer = "Да" };
+           
 
-            Answer answer6_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_2.Id, TextAnswer = "" };
-            Answer answer6_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_2.Id, TextAnswer = "" };
-            Answer answer6_2_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_2.Id, TextAnswer = "" };
+            Answer answer6_2_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_2.Id, TextAnswer = "Нет" };
+            Answer answer6_2_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_2.Id, TextAnswer = "Да" };
 
-            Answer answer6_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_3.Id, TextAnswer = "" };
-            Answer answer6_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_3.Id, TextAnswer = "" };
-            Answer answer6_3_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_3.Id, TextAnswer = "" };
 
-            Answer answer6_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_4.Id, TextAnswer = "" };
-            Answer answer6_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_4.Id, TextAnswer = "" };
-            Answer answer6_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_4.Id, TextAnswer = "" };
+            Answer answer6_3_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_3.Id, TextAnswer = "Нет" };
+            Answer answer6_3_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_3.Id, TextAnswer = "Да" };
+            
 
-            Answer answer6_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_5.Id, TextAnswer = "" };
-            Answer answer6_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_5.Id, TextAnswer = "" };
-            Answer answer6_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_5.Id, TextAnswer = "" };
+            Answer answer6_4_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_4.Id, TextAnswer = "Заголовочный файл fstream" };
+            Answer answer6_4_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_4.Id, TextAnswer = "Ничего, работа с файлами есть в стандартной библиотеке" };
+            Answer answer6_4_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_4.Id, TextAnswer = "Библиотеку file" };
 
-            Answer answer6_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_6.Id, TextAnswer = "" };
-            Answer answer6_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_6.Id, TextAnswer = "" };
-            Answer answer6_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_6.Id, TextAnswer = "" };
+            Answer answer6_5_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_5.Id, TextAnswer = "Дизъюнкция" };
+            Answer answer6_5_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_5.Id, TextAnswer = "Импликация" };
+            Answer answer6_5_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_5.Id, TextAnswer = "Инверсия" };
 
-            Answer answer6_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_7.Id, TextAnswer = "" };
-            Answer answer6_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_7.Id, TextAnswer = "" };
-            Answer answer6_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_7.Id, TextAnswer = "" };
+            Answer answer6_6_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_6.Id, TextAnswer = "Метод класса, в котором присутствуют абстрактные поля" };
+            Answer answer6_6_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_6.Id, TextAnswer = "Метод класса, реализация для которого отсутствует" };
+            Answer answer6_6_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_6.Id, TextAnswer = "Метод абстрактного класса" };
 
-            Answer answer6_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_8.Id, TextAnswer = "" };
-            Answer answer6_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_8.Id, TextAnswer = "" };
-            Answer answer6_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_8.Id, TextAnswer = "" };
+            Answer answer6_7_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_7.Id, TextAnswer = "Виртуальный метод, который переопределяет виртуальный метод базового класса" };
+            Answer answer6_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_7.Id, TextAnswer = "Класс, который наследуется от абстрактного" };
+            Answer answer6_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_7.Id, TextAnswer = "Свойство, которое может принимать несколько значений" };
+
+            Answer answer6_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_8.Id, TextAnswer = "Логическое сложение" };
+            Answer answer6_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_8.Id, TextAnswer = "Логическое умножение" };
+            Answer answer6_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question6_8.Id, TextAnswer = "Функция для обработки строк" };
 
 
 
@@ -428,11 +428,11 @@ namespace OskiTest.Data
      answer5_5_1, answer5_5_2,   answer5_5_3,
      answer5_6_1, answer5_6_2,  answer5_6_3,
      answer5_7_1, answer5_7_2,  answer5_7_3,
-     answer5_8_1, answer5_8_2,  answer5_8_3,
+     answer5_8_1, answer5_8_2, 
 
-     answer6_1_1, answer6_1_2,  answer6_1_3,
-     answer6_2_1, answer6_2_2,  answer6_2_3,
-     answer6_3_1, answer6_3_2,  answer6_3_3,
+     answer6_1_1, answer6_1_2,  
+     answer6_2_1, answer6_2_2, 
+     answer6_3_1, answer6_3_2,  
      answer6_4_1, answer6_4_2,  answer6_4_3,
      answer6_5_1, answer6_5_2,  answer6_5_3,
      answer6_6_1, answer6_6_2,  answer6_6_3,

@@ -148,7 +148,7 @@ namespace OskiTest.Controllers
                     userTestRepository.Commit();
                     return Ok(new { Score = res });
                 }
-                return BadRequest();
+                return BadRequest("test is lock");
 
             } catch  (Exception ex)  { return BadRequest(ex.Message); };
         }
