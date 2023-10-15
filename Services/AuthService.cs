@@ -10,7 +10,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Collections.Generic;
 
 namespace OskiTest.Services
-{ 
+{
+#pragma warning disable CS1591
     public class AuthService: IAuthService
     {
         public AuthData GetAuthData(User user)

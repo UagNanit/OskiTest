@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace OskiTest.Models
 {
+#pragma warning disable CS1591
     public class Question : IEntityBase
     {
         public string Id { get; set; }

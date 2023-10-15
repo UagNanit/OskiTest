@@ -1,5 +1,6 @@
 ﻿namespace OskiTest.Models
 {
+#pragma warning disable CS1591
     public class UserTest : IEntityBase
     {
         public string Id { get; set; }

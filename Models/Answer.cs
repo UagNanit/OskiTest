@@ -2,6 +2,7 @@
 
 namespace OskiTest.Models
 {
+#pragma warning disable CS1591
     public class Answer : IEntityBase
     {
         [Key]

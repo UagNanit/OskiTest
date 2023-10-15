@@ -3,6 +3,7 @@ using System.Text;
 
 namespace OskiTest.Services
 {
+    #pragma warning disable CS1591
     public class AuthOptions
     {
         public const string ISSUER = "http://localhost:5215"; // издатель токена

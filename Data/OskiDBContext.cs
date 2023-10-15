@@ -6,6 +6,7 @@ using OskiTest.Models;
 
 namespace OskiTest.Data
 {
+    #pragma warning disable CS1591
     public class OskiDBContext : DbContext
     {
 
@@ -140,7 +141,7 @@ namespace OskiTest.Data
             Answer answer1_7_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question1_7.Id, TextAnswer = "&lt;ol&gt; - нумерованный список, а &lt;ul&gt; - ненумерованный" };
             Answer answer1_7_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question1_7.Id, TextAnswer = " &lt;ol&gt; - вертикальный вывод элементов списка, а &lt;ul&gt; - горизонтальный" };
 
-            Answer answer1_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question2_8.Id, TextAnswer = "Описание изображения" };
+            Answer answer1_8_1 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question1_8.Id, TextAnswer = "Описание изображения" };
             Answer answer1_8_2 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question1_8.Id, TextAnswer = "Изменение размера изображения" };
             Answer answer1_8_3 = new Answer { Id = Guid.NewGuid().ToString(), QuestionId = question1_8.Id, TextAnswer = "Альтернативная ссылка на изображение" };
 
@@ -366,8 +367,6 @@ namespace OskiTest.Data
             question6_6.CorrectAnswerId = answer6_6_2.Id;
             question6_7.CorrectAnswerId = answer6_7_1.Id;
             question6_8.CorrectAnswerId = answer6_8_2.Id;
-
-
 
 
             modelBuilder.Entity<Role>().HasData(new Role[] { adminRole, userRole });

@@ -6,6 +6,7 @@ using OskiTest.Models;
 
 namespace OskiTest.Data.Abstract
 {
+#pragma warning disable CS1591
     public interface IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {
         IEnumerable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties);

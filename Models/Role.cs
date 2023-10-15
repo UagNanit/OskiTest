@@ -2,6 +2,7 @@
 
 namespace OskiTest.Models
 {
+#pragma warning disable CS1591
     public class Role
     {
         public string Id { get; set; }

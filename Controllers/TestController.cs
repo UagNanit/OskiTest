@@ -43,33 +43,38 @@ namespace OskiTest.Controllers
         [Authorize(Roles = "admin,user")]
         public ActionResult<UserViewModel> GetUserData(string id)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var user = userRepository.GetSingle(id);
-
-            if (user == null)
+            try
             {
-                return BadRequest(new { id = "user do not exist" });
+                if (!ModelState.IsValid) return BadRequest(ModelState);
+
+                var user = userRepository.GetSingle(id);
+
+                if (user == null)
+                {
+                    return BadRequest(new { id = "user do not exist" });
+                }
+
+                var ut = userTestRepository.AllIncluding(t => t.UserId == user.Id);
+                var t = testRepository.AllIncluding(s => ut.Any(u => u.TestId == s.Id)).ToList();
+                var vtm = t.Join(ut, u => u.Id, c => c.TestId, (u, c) => new TestViewModel
+                {
+                    Id = u.Id,
+                    TestName = u.TestName,
+                    Description = u.Description,
+                    TestScore = c.TestScore
+                }).ToList();
+
+                UserViewModel userViewModel = new UserViewModel
+                {
+                    Id = user.Id,
+                    Name = user.UserName,
+                    Tests = vtm
+                };
+
+                return userViewModel;
+
             }
-
-            var ut = userTestRepository.AllIncluding(t => t.UserId == user.Id);
-            var t = testRepository.AllIncluding(s => ut.Any(u => u.TestId == s.Id)).ToList();
-            var vtm = t.Join(ut, u => u.Id, c => c.TestId, (u, c) => new TestViewModel
-            {
-                Id = u.Id,
-                TestName = u.TestName,
-                Description = u.Description,
-                TestScore = c.TestScore
-            }).ToList();
-
-            UserViewModel userViewModel = new UserViewModel
-            {
-                Id = user.Id,
-                Name = user.UserName,
-                Tests = vtm
-            };
-
-            return userViewModel;
+            catch (Exception ex) { return BadRequest(ex.Message); };
         }
 
 
@@ -83,18 +88,26 @@ namespace OskiTest.Controllers
         [Authorize(Roles = "admin,user")]
         public ActionResult<List<QuestionsViewModel>> GetTestData(string id)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var questions = questionRepository.AllIncluding(x => x.TestId == id).Select(x =>
-            new QuestionsViewModel { Id = x.Id, TextQuestion = x.TextQuestion, Answers = answerRepository.AllIncluding(a => a.QuestionId == x.Id).Select(s => 
-            new AnswerViewModel { Id = s.Id, TextAnswer = s.TextAnswer, QuestionId = s.QuestionId } ).ToList()
-            }).ToList();
-
-            if (questions == null)
+            try
             {
-                return BadRequest(new { id = "Id do not exist" });
-            }
+                if (!ModelState.IsValid) return BadRequest(ModelState);
+                var questions = questionRepository.AllIncluding(x => x.TestId == id).Select(x =>
+                new QuestionsViewModel
+                {
+                    Id = x.Id,
+                    TextQuestion = x.TextQuestion,
+                    Answers = answerRepository.AllIncluding(a => a.QuestionId == x.Id).Select(s =>
+                new AnswerViewModel { Id = s.Id, TextAnswer = s.TextAnswer, QuestionId = s.QuestionId }).ToList()
+                }).ToList();
 
-            return questions;
+                if (questions == null)
+                {
+                    return BadRequest(new { id = "Id do not exist" });
+                }
+
+                return questions;
+            }
+            catch (Exception ex) { return BadRequest(ex.Message); };
         }
 
         /// <summary>
@@ -105,20 +118,24 @@ namespace OskiTest.Controllers
         /// <returns></returns>
         [Route("useranswers")]
         [HttpPost]
-        //[Authorize(Roles = "admin,user")]
+        [Authorize(Roles = "admin,user")]
         public ActionResult PostUserAnswers([FromBody] UserAnswersViewModel model)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            
-            var questions = questionRepository.AllIncluding(x => x.TestId == model.TestId);
-            var res = questions.Where(q => model.Answers.Any(m => m.QuestionId == q.Id && m.AnswerId == q.CorrectAnswerId)).Count();
+            try {
+                if (!ModelState.IsValid) return BadRequest(ModelState);
+                var questions = questionRepository.AllIncluding(x => x.TestId == model.TestId);
+                var res = questions.Where(q => model.Answers.Any(m => m.QuestionId == q.Id && m.AnswerId == q.CorrectAnswerId)).Count();
 
-            var userTest = userTestRepository.GetSingle(s => s.UserId == model.UserId && s.TestId == model.TestId);
-            userTest.TestScore = res;
-            userTestRepository.Update(userTest);
-            userTestRepository.Commit();
+                var userTest = userTestRepository.GetSingle(s => s.UserId == model.UserId && s.TestId == model.TestId);
+                if (userTest.TestScore == -1) {
+                    userTest.TestScore = res;
+                    userTestRepository.Update(userTest);
+                    userTestRepository.Commit();
+                    return Ok(new { Score = res });
+                }
+                return BadRequest();
 
-            return Ok(new { Score = res });
+            } catch  (Exception ex)  { return BadRequest(ex.Message); };
         }
     }
 }

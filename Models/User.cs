@@ -3,6 +3,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace OskiTest.Models
 {
+#pragma warning disable CS1591
     public class User : IEntityBase
     {
         public string Id { get; set; }
