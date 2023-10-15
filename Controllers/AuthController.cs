@@ -87,42 +87,5 @@ namespace OskiTest.Controllers
 
             return authService.GetAuthData(user);
         }
-
-        /// <summary>
-        /// Get information about user.
-        /// </summary>
-        /// <param name="id">User ID</param>
-        /// <returns></returns>
-        [Route("user/{id}")]
-        [HttpGet]
-        [Authorize(Roles = "admin,user")]
-        public ActionResult<UserViewModel> GetUserData(string id)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var user = userRepository.GetSingle(id);
-
-            if (user == null)
-            {
-                return BadRequest(new { id = "user do not exist" });
-            }
-
-            var ut = userTestRepository.AllIncluding(t => t.UserId == user.Id);
-            var t = testRepository.AllIncluding(s => ut.Any(u => u.TestId == s.Id)).ToList();
-            var vtm = t.Join(ut, u => u.Id, c => c.TestId, (u, c) => new TestViewModel { 
-                Id = u.Id,
-                TestName = u.TestName, 
-                Description = u.Description, 
-                TestScore = c.TestScore }).ToList();
-
-            UserViewModel userViewModel = new UserViewModel
-            {
-                Id = user.Id,
-                Name = user.UserName,
-                Tests = vtm
-            };
-
-            return userViewModel;
-        }
     }
 }
